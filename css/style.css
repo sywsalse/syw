@@ -154,9 +154,23 @@ h1, h2, h3, p { margin: 0; }
 .thumbs { margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
 .thumb { padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg-alt); cursor: zoom-in; aspect-ratio: 4 / 3; }
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs.single { grid-template-columns: 1fr; }
+.thumbs.single .thumb { aspect-ratio: auto; }
+.thumbs.single .thumb img { height: auto; object-fit: contain; }
 .card .empty-note { margin-top: auto; padding-top: 14px; font-size: 13px; color: #7a828c; }
 .card .links { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .card .links a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+.card .desc { margin-top: 8px; }
+.card .tags { margin-top: 14px; }
+.card .links { margin-top: auto; padding-top: 16px; }
+.more { margin-top: 14px; border-top: 1px solid var(--line); }
+.more summary { display: flex; align-items: center; min-height: 48px; cursor: pointer; font-weight: 600; color: var(--accent); list-style: none; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary::after { content: "▾"; margin-left: 6px; }
+.more[open] summary::after { content: "▴"; }
+.more h4 { margin: 14px 0 8px; font-size: 15px; }
+.more h4:first-of-type { margin-top: 4px; }
+#projectList { grid-template-columns: repeat(2, 1fr); align-items: start; }
 .placeholder { grid-column: 1 / -1; background: #fff; border: 1px dashed #c9c6bd; border-radius: var(--radius); padding: 32px 20px; text-align: center; color: var(--muted); }
 
 /* footer, lightbox, toast */
@@ -202,7 +216,7 @@ h1, h2, h3, p { margin: 0; }
   .job::before { left: -22px; width: 14px; height: 14px; }
   .job { padding: 18px 16px; }
   .job-title { font-size: 18px; }
-  .card-grid, .cert-grid { grid-template-columns: 1fr; }
+  .card-grid, .cert-grid, #projectList { grid-template-columns: 1fr; }
   .cert { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0 12px; }
   .cert > * { grid-column: 1; }
   .cert-date { margin-top: 0; grid-row: 1 / span 3; grid-column: 2; }

@@ -127,7 +127,7 @@
 
   function thumbs(images) {
     if (!images || !images.length) return '';
-    return '<div class="thumbs">' + images.map(function (im, i) {
+    return '<div class="thumbs' + (images.length === 1 ? ' single' : '') + '">' + images.map(function (im, i) {
       return '<button class="thumb" type="button" data-src="' + esc(im.src) + '" data-cap="' + esc(im.caption || '') + '" aria-label="' + esc(im.caption || '이미지 크게 보기') + '">' +
         '<img src="' + esc(im.src) + '" alt="' + esc(im.caption || '') + '" loading="lazy" decoding="async"></button>';
     }).join('') + '</div>';
@@ -153,17 +153,44 @@
       return;
     }
     box.innerHTML = list.map(function (p) {
-      return '<article class="card">' +
-        '<div class="card-label">' + esc(p.label || 'AI 프로그램') + '</div>' +
-        '<h3>' + esc(p.title) + '</h3>' +
-        (p.description ? '<p style="margin-top:8px">' + esc(p.description) + '</p>' : '') +
-        (p.bullets ? points(p.bullets) : '') +
-        thumbs(p.images) +
-        (p.links && p.links.length ? '<div class="links">' + p.links.map(function (l) {
-          return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + '</a>';
-        }).join('') + '</div>' : '') +
-      '</article>';
+      return simpleCard(p);
     }).join('');
+  }
+
+  function linkList(links) {
+    if (!links || !links.length) return '';
+    return '<div class="links">' + links.map(function (l) {
+      return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>';
+    }).join('') + '</div>';
+  }
+
+  // 프로젝트·활동 공통 카드. 배경/기능 같은 긴 내용은 "자세히 보기"로 접어 둔다.
+  function simpleCard(p) {
+    var more = '';
+    if (p.background || (p.sections && p.sections.length)) {
+      more = '<details class="more"><summary>자세히 보기</summary>' +
+        (p.background ? '<h4>개발 배경</h4><p>' + esc(p.background) + '</p>' : '') +
+        (p.sections || []).map(function (s) {
+          return '<h4>' + esc(s.heading) + '</h4>' + points(s.items);
+        }).join('') +
+        (p.images && p.images.length ? '<h4>화면 예시</h4>' + thumbs(p.images) : '') +
+      '</details>';
+    }
+    var chips = p.tags || p.tech;
+    return '<article class="card">' +
+      '<div class="card-label">' + esc(p.label || 'AI 프로그램') + '</div>' +
+      '<h3>' + esc(p.title) + '</h3>' +
+      (p.description ? '<p class="desc">' + esc(p.description) + '</p>' : '') +
+      (p.bullets ? points(p.bullets) : '') +
+      (chips && chips.length ? tags(chips) : '') +
+      (more ? '' : thumbs(p.images)) +
+      more +
+      linkList(p.links) +
+    '</article>';
+  }
+
+  function renderActivities(list) {
+    $('activityList').innerHTML = list.map(simpleCard).join('');
   }
 
   /* ---------- 이미지 확대 ---------- */
@@ -223,7 +250,7 @@
     var msg = '<p class="empty">내용을 불러오지 못했습니다. 파일을 더블클릭해서 연 경우 데이터가 막힐 수 있습니다. ' +
       'GitHub Pages 주소로 보거나, 이 폴더에서 <code>python -m http.server</code> 실행 후 ' +
       '<code>http://localhost:8000</code>으로 열어주세요.</p>';
-    ['careerList', 'eduCards', 'projectList'].forEach(function (id) { $(id).innerHTML = msg; });
+    ['careerList', 'eduCards', 'projectList', 'activityList'].forEach(function (id) { $(id).innerHTML = msg; });
     $('certList').innerHTML = '';
   }
 
@@ -232,7 +259,8 @@
     getJSON('data/career.json'),
     getJSON('data/certs.json'),
     getJSON('data/education.json'),
-    getJSON('data/projects.json')
+    getJSON('data/projects.json'),
+    getJSON('data/activities.json')
   ]).then(function (r) {
     renderProfile(r[0]);
     renderCareer(r[1]);
@@ -241,6 +269,7 @@
     $('toolList').innerHTML = r[2].tools.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
     renderEducation(r[3]);
     renderProjects(r[4]);
+    renderActivities(r[5]);
   }).catch(function (err) {
     console.error(err);
     showLoadError();

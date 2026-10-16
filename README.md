@@ -18,7 +18,8 @@ HTML / CSS / JavaScript로 만든 정적 사이트입니다. 서버 없이 GitHu
 | `career.json` | 경력 목록 |
 | `certs.json` | 자격증·어학, 사용 Tool |
 | `education.json` | 전공 정보, 졸업작품·R&D·대회 카드, 수강 과목 |
-| `projects.json` | AI로 만든 프로그램 (지금은 비어 있어 "곧 소개할 예정" 문구가 보입니다) |
+| `projects.json` | AI로 만든 프로그램 (`background`, `sections`를 넣으면 카드 안에 "자세히 보기"로 접혀서 보입니다) |
+| `activities.json` | 그 밖의 활동 (숏폼 유튜브 채널 등). 채널 주소는 `"links"`에 `{ "label": "채널 바로가기", "url": "..." }`로 추가합니다 |
 
 ## 이미지·파일 추가하기
 

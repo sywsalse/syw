@@ -6,5 +6,5 @@
     { "category": "자격증", "name": "CSWP", "detail": "SolidWorks 공인 자격", "date": "2022" },
     { "category": "자격증", "name": "운전면허 2종 보통", "detail": "", "date": "" }
   ],
-  "tools": ["Excel", "AutoCAD", "SolidWorks", "CATIA", "ANSYS"]
+  "tools": ["Excel", "AutoCAD", "SolidWorks", "CATIA", "ANSYS", "Canva", "CapCut"]
 }

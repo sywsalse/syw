@@ -1,0 +1,11 @@
+[
+  {
+    "label": "취미",
+    "title": "숏폼 유튜브 채널 운영",
+    "description": "CapCut으로 숏폼 영상을 직접 만들어 유튜브 채널에 올리고 있습니다.",
+    "tags": ["CapCut", "숏폼 제작"],
+    "links": [
+      { "label": "채널 바로가기", "url": "https://www.youtube.com/@yozzayu" }
+    ]
+  }
+]
