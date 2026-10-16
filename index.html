@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우서영 | 포트폴리오</title>
+  <meta name="description" content="영업지원·구매무역 담당자 우서영의 포트폴리오">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" id="brand">우서영</a>
+      <nav class="nav" aria-label="섹션 이동">
+        <a href="#career" data-target="career">경력</a>
+        <a href="#certs" data-target="certs">자격증·어학</a>
+        <a href="#education" data-target="education">전공</a>
+        <a href="#projects" data-target="projects">AI 프로그램</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="avatar" id="avatar" aria-hidden="true"></div>
+        <div class="hero-text">
+          <h1 id="greeting">&nbsp;</h1>
+          <p class="tagline" id="tagline"></p>
+          <p class="meta" id="meta"></p>
+          <div class="actions">
+            <a class="btn primary" id="resumeBtn" href="assets/resume.pdf" download>이력서 다운로드</a>
+            <a class="btn" id="mailBtn" href="#">문의하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <ul class="highlights" id="highlights" aria-label="핵심 소개"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="career" aria-labelledby="h-career">
+      <div class="wrap">
+        <h2 id="h-career">경력</h2>
+        <div class="timeline" id="careerList"><p class="loading">불러오는 중…</p></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="certs" aria-labelledby="h-certs">
+      <div class="wrap">
+        <h2 id="h-certs">자격증 · 어학</h2>
+        <div class="filters" role="tablist" aria-label="분류 필터" id="certFilters">
+          <button class="chip active" role="tab" aria-selected="true" data-filter="전체">전체</button>
+          <button class="chip" role="tab" aria-selected="false" data-filter="어학">어학</button>
+          <button class="chip" role="tab" aria-selected="false" data-filter="자격증">자격증</button>
+        </div>
+        <ul class="cert-grid" id="certList"><li class="loading">불러오는 중…</li></ul>
+        <h3 class="sub">사용 Tool</h3>
+        <ul class="tags" id="toolList"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="h-edu">
+      <div class="wrap">
+        <h2 id="h-edu">기계설계공학 전공</h2>
+        <p class="edu-head" id="eduHead"></p>
+        <div class="card-grid" id="eduCards"><p class="loading">불러오는 중…</p></div>
+        <h3 class="sub">주요 수강</h3>
+        <ul class="tags" id="courseList"></ul>
+      </div>
+    </section>
+
+    <section class="section alt" id="projects" aria-labelledby="h-proj">
+      <div class="wrap">
+        <h2 id="h-proj">AI로 만든 프로그램</h2>
+        <div class="card-grid" id="projectList"><p class="loading">불러오는 중…</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p id="footMail"></p>
+      <p class="copy">© 2026 우서영. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
+    <figure>
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><p class="noscript">이 페이지는 JavaScript가 필요합니다.</p></noscript>
+  <script src="js/main.js"></script>
+</body>
+</html>

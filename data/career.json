@@ -1,0 +1,31 @@
+[
+  {
+    "company": "(주)동일과학",
+    "role": "영업지원",
+    "period": "2025.03 ~ 현재",
+    "current": true,
+    "summary": "실험실 기자재 유통업체",
+    "brands": ["ThermoFisher", "Inorganic Ventures", "Yamato", "Analytichem (구 SCP Science)"],
+    "bullets": [
+      "고객 견적 제공 및 고객 관리, 간단한 기술 상담",
+      "미국·캐나다·일본 제조사 문의, 발주 요청 및 수입 진행",
+      "입고 검수 및 출고",
+      "ICP 시약 수입 관련 법규 업무: 화관법 등록(민원24), 원자력 관련 수출입 등록(NEPS)",
+      "MSDS 작성 및 물질안전보건자료 시스템 업데이트"
+    ],
+    "tags": []
+  },
+  {
+    "company": "(주)시디피우정",
+    "role": "설계팀 사원",
+    "period": "2023.07 ~ 2023.12",
+    "current": false,
+    "summary": "포장자동화기계 제조사",
+    "brands": [],
+    "bullets": [
+      "제품별로 교체되는 체인지파트(그리퍼, 홀더 등) 설계",
+      "AutoCAD, SolidWorks 사용"
+    ],
+    "tags": ["AutoCAD", "SolidWorks"]
+  }
+]

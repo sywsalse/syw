@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "category": "어학", "name": "JLPT N2", "detail": "일본어능력시험", "date": "2023" },
+    { "category": "어학", "name": "JPT 610점", "detail": "일본어능력평가시험", "date": "2022" },
+    { "category": "자격증", "name": "컴퓨터활용능력 2급", "detail": "대한상공회의소", "date": "2023" },
+    { "category": "자격증", "name": "CSWP", "detail": "SolidWorks 공인 자격", "date": "2022" },
+    { "category": "자격증", "name": "운전면허 2종 보통", "detail": "", "date": "" }
+  ],
+  "tools": ["Excel", "AutoCAD", "SolidWorks", "CATIA", "ANSYS"]
+}

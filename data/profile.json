@@ -1,0 +1,14 @@
+{
+  "name": "우서영",
+  "greeting": "Hello, I'm 우서영",
+  "tagline": "설계 실무와 수입·유통 실무를 모두 경험한 영업지원·구매무역 담당자입니다.",
+  "location": "서울 구로구",
+  "email": "wsy09922@gmail.com",
+  "photo": "",
+  "resume": "assets/resume.pdf",
+  "highlights": [
+    { "target": "career", "title": "경력", "summary": "영업지원 · 설계" },
+    { "target": "certs", "title": "자격증 · 어학", "summary": "JLPT N2 · JPT 610 · CSWP" },
+    { "target": "education", "title": "전공", "summary": "기계설계공학 · 한국공학대학교" }
+  ]
+}
